@@ -23,8 +23,10 @@ router
           var user = new User();
           user.name = req.body.username;
           user.email = req.body.email;
+          user.twitter=req.body.thandle;
           user.photo = user.gravatar();
           user.password = req.body.password;
+          console.log(user)
           user.save(function (err) {
             if (err) 
               return next(err);
